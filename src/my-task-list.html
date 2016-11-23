@@ -27,23 +27,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
   <script>
     (function() {
-      var tasks = [{name: 'task1', description: 'Mola', done: false}, {
-        name: 'Comprar leche',
-        description: 'Mola',
-        done: true
-      }];
 
       Polymer({
         is: 'my-task-list',
         properties: {
-          myTasks: {
+          tasks: {
             type: Array,
-            value: tasks
-          },
-          tasks: Array
+            notify: true
+          }
         },
         addTask: function () {
-          this.push('myTasks', {name: "", description: "", done:false });
+          this.tasks.push({name: "", description: "", done:false });
         }
       });
     })();
